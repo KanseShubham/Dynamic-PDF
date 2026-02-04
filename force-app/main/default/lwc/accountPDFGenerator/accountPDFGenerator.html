@@ -1,0 +1,41 @@
+<template>
+    <lightning-button label="Generate PDF" onclick={openModal}></lightning-button>
+
+    <template if:true={isOpen}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Select Fields for PDF</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" style="max-height:400px; overflow:auto;">
+                    <template for:each={fields} for:item="f">
+                        <lightning-input key={f.api}
+                                         type="checkbox"
+                                         label={f.label}
+                                         value={f.api}
+                                         onchange={handleCheck}>
+                        </lightning-input>
+                    </template>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                      class="slds-m-right_small"
+                      label="Cancel"
+                      onclick={closeModal}>
+                    </lightning-button>
+
+                    <lightning-button
+                       variant="brand"
+                       label="Done"
+                       onclick={handleDone}>
+                   </lightning-button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

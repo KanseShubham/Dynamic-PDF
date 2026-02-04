@@ -1,0 +1,45 @@
+<apex:page renderAs="pdf" controller="AccountPDFController" applyBodyTag="false">
+
+    <apex:outputPanel layout="block" style="font-family: Arial; font-size:12px;">
+
+        <!-- Header -->
+        <table width="100%" border="0" cellpadding="8" cellspacing="0">
+            <tr>
+                <td align="center" style="font-size:22px; font-weight:bold;">
+                    Account Details Report
+                </td>
+            </tr>
+        </table>
+
+        <br/>
+
+        <!-- Data Table -->
+        <table width="100%" border="1" cellpadding="8" cellspacing="0">
+
+            <apex:repeat value="{!fieldData}" var="item">
+                <tr>
+                    <td width="30%" bgcolor="#eeeeee">
+                        <b>{!item.label}</b>
+                    </td>
+                    <td width="70%">
+                        {!item.value}
+                    </td>
+                </tr>
+            </apex:repeat>
+
+        </table>
+
+        <br/><br/>
+
+        <!-- Footer -->
+        <table width="100%">
+            <tr>
+                <td align="center" style="font-size:10px;">
+                    Generated on {!NOW()}
+                </td>
+            </tr>
+        </table>
+
+    </apex:outputPanel>
+
+</apex:page>
