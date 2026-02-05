@@ -12,7 +12,7 @@ export default class AccountPdfGenerator extends LightningElement {
     @track isOpen = false;
     selected = [];
 
-    // 🔹 Get Account Name for dynamic toast
+    // Get Account Name for dynamic toast
     @wire(getRecord, { recordId: '$recordId', fields: [NAME_FIELD] })
     account;
 
@@ -48,8 +48,8 @@ export default class AccountPdfGenerator extends LightningElement {
             this.selected = this.selected.filter(f => f !== event.target.value);
         }
     }
-
-    // ✅ Send Email
+    
+    // Send Email
     sendEmail(){
         sendPDF({ recordId: this.recordId })
         .then(() => {
@@ -64,7 +64,7 @@ export default class AccountPdfGenerator extends LightningElement {
         });
     }
 
-    // ✅ Generate PDF
+    //  Generate PDF
     handleDone(){
 
         if(this.selected.length === 0){
@@ -89,7 +89,7 @@ export default class AccountPdfGenerator extends LightningElement {
         });
     }
 
-    // 🔹 Reusable Toast
+    //  Reusable Toast
     showToast(title, message, variant){
         this.dispatchEvent(
             new ShowToastEvent({
