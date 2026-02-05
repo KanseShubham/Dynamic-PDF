@@ -2,19 +2,27 @@
 
     <apex:outputPanel layout="block" style="font-family: Arial; font-size:12px;">
 
-        <!-- Header -->
-        <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <!-- HEADER WITH LOGO -->
+        <table width="100%" cellpadding="8" cellspacing="0">
             <tr>
-                <td align="center" style="font-size:22px; font-weight:bold;">
+                <td width="20%">
+                    <img src="{!URLFOR($Resource.CompanyLogo)}" width="150" height="60"/>
+                </td>
+                <td width="80%" align="right" style="font-size:22px; font-weight:bold;">
                     Account Details Report
                 </td>
             </tr>
         </table>
 
-        <br/>
+        <hr/>
 
-        <!-- Data Table -->
+        <!-- ACCOUNT INFO TABLE -->
         <table width="100%" border="1" cellpadding="8" cellspacing="0">
+
+            <tr bgcolor="#f2f2f2">
+                <th align="left">Field</th>
+                <th align="left">Value</th>
+            </tr>
 
             <apex:repeat value="{!fieldData}" var="item">
                 <tr>
@@ -31,11 +39,14 @@
 
         <br/><br/>
 
-        <!-- Footer -->
-        <table width="100%">
+        <!-- FOOTER -->
+        <table width="100%" cellpadding="5">
             <tr>
-                <td align="center" style="font-size:10px;">
-                    Generated on {!NOW()}
+                <td align="left" style="font-size:10px;">
+                    Generated on: {!NOW()}
+                </td>
+                <td align="right" style="font-size:10px;">
+                    Confidential Document
                 </td>
             </tr>
         </table>
