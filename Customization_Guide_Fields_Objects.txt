@@ -1,0 +1,25 @@
+INSTRUCTIONS TO CHANGE FIELD NAMES AND OBJECTS
+
+This project is fully reusable. You can change fields and even change
+the object.
+
+Change Fields: 1. Open LWC JS file. 2. Update the fields array with your
+field labels and API names.
+
+3.  Open Apex Controller (AccountPDFController).
+4.  Update SOQL query with your fields.
+5.  Update label map inside getLabel() method.
+
+Change Object: 1. Replace Account with your object API name in: - Apex
+classes - Visualforce page controller - SOQL queries
+
+2.  Update record page where LWC is added.
+
+Add Logo to PDF: - Open Visualforce page. - Add your logo URL at the
+top.
+
+Change Email Field: - In Apex class, update Email__c with your email
+field API name.
+
+You can fully customize this project for: - Opportunity - Invoice
+(Custom Object) - Case - Any Standard or Custom Object

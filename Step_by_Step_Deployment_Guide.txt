@@ -1,0 +1,34 @@
+STEP-BY-STEP DEPLOYMENT GUIDE – DYNAMIC PDF GENERATOR IN SALESFORCE
+
+This guide will help you deploy the provided ZIP files into your
+Salesforce org.
+
+Prerequisites: - Salesforce Org (Developer / Sandbox / Production with
+access) - VS Code with Salesforce Extension Pack - Salesforce CLI
+installed - Basic knowledge of how to authorize an org
+
+Step 1: Extract the ZIP File Unzip the project folder to your local
+system.
+
+Step 2: Open Project in VS Code Open VS Code and click on “Open Folder”.
+Select the extracted project folder.
+
+Step 3: Authorize Salesforce Org Open terminal in VS Code and run: sfdx
+auth:web:login Login to your Salesforce org.
+
+Step 4: Deploy the Code In terminal, run: sfdx force:source:deploy -p
+force-app
+
+This will deploy: - Apex Classes - Visualforce Page - LWC Component
+
+Step 5: Add LWC to Record Page Go to Setup → Object Manager → Account →
+Lightning Record Pages. Edit the page and drag the LWC component to the
+page. Save and Activate.
+
+Step 6: Test the Solution Open any Account record. Click “Generate PDF”.
+Select fields and click Done. Check Files section for generated PDF.
+
+Step 7: Test Email Button Click “Send PDF to Customer”. Verify the email
+is sent to the email field on the record.
+
+Deployment is now complete.
